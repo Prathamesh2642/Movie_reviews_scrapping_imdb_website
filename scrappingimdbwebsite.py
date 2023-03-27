@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import pandas as pd
 
 
 link=requests.get("https://www.imdb.com/title/tt6710474/reviews?ref_=tt_urv").text
@@ -31,9 +32,13 @@ mainreview=soup.find("section",class_="article")
 
 reviewlist=[]
 for i in soup.find_all("div",class_="text show-more__control"):
-    # print(len(soup.find_all("div",class_="text show-more__control")))
+    print(len(soup.find_all("div",class_="text show-more__control")))
     # print(i.find("div",class_="text show-more__control"))
     # print(i.text)
     reviewlist.append(i.text)
 for i in reviewlist:
     print(i)
+
+df=pd.DataFrame(reviewlist)
+print(df)
+df.to_csv('Moviereviews.csv')
