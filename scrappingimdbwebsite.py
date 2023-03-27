@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 
 
-link=requests.get("https://www.imdb.com/title/tt6710474/reviews?ref_=tt_urv").text
+link=requests.get("https://www.imdb.com/title/tt10366206/reviews?ref_=tt_urv").text
 soup=BeautifulSoup(link,'html.parser')
 # print(soup.prettify())
 print(soup.find('div',class_="review-container"))
@@ -41,4 +41,4 @@ for i in reviewlist:
 
 df=pd.DataFrame(reviewlist)
 print(df)
-df.to_csv('Moviereviews.csv')
+df.to_csv('Moviereviews1.csv')
