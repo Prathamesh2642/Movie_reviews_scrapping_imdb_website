@@ -10,3 +10,30 @@ print(soup.find('div',class_="review-container"))
 maincont=soup.find('div',class_="review-container")
 print(maincont.span.text)
 print(soup.find("div",class_="text show-more__control").text)
+
+# print(soup.find("section",class_="article"))
+
+mainreview=soup.find("section",class_="article")
+
+# for i in soup.find_all("div",class_="review-container"):
+#     print(len(soup.find_all("div",class_="review-container")))
+#     mainreview=i.find("div",class_="review-container")
+#     print(mainreview.find("div",class_="text show-more__control").text)
+#     print("hello")
+
+
+# print(reviewlist)
+
+# for i in reviewlist:
+    # print(i)
+# reviewlist1=reviewlist.find_all("div",class_="text show-more__control")
+# print(reviewlist1)
+
+reviewlist=[]
+for i in soup.find_all("div",class_="text show-more__control"):
+    # print(len(soup.find_all("div",class_="text show-more__control")))
+    # print(i.find("div",class_="text show-more__control"))
+    # print(i.text)
+    reviewlist.append(i.text)
+for i in reviewlist:
+    print(i)
