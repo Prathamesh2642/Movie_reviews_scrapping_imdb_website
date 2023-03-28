@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-
+import trial
 
 link=requests.get("https://www.imdb.com/title/tt10366206/reviews?ref_=tt_urv").text
 soup=BeautifulSoup(link,'html.parser')
